@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB20D09316BEFC320080559A /* libpd-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB20D09216BEFC320080559A /* libpd-ios.a */; };
+		BB20D09516BEFF500080559A /* test.pd in Resources */ = {isa = PBXBuildFile; fileRef = BB20D09416BEFF500080559A /* test.pd */; };
+		BB20D09716BEFFCD0080559A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB20D09616BEFFCD0080559A /* AudioToolbox.framework */; };
+		BB20D09916BF00010080559A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB20D09816BF00010080559A /* AVFoundation.framework */; };
 		BB30D31416650F7D00ACAE1C /* UDPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = BB30D31316650F7D00ACAE1C /* UDPConnection.m */; };
 		BB30D31A166520FF00ACAE1C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB30D319166520FF00ACAE1C /* QuartzCore.framework */; };
 		BB30D31E1665278B00ACAE1C /* LogConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = BB30D31D1665278B00ACAE1C /* LogConnection.m */; };
@@ -39,6 +43,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB20D09216BEFC320080559A /* libpd-ios.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = "libpd-ios.a"; path = "../pd-for-ios/libpd/build/Release-iphoneos/libpd-ios.a"; sourceTree = "<group>"; };
+		BB20D09416BEFF500080559A /* test.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.pd; sourceTree = "<group>"; };
+		BB20D09616BEFFCD0080559A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		BB20D09816BF00010080559A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		BB30D31216650F7D00ACAE1C /* UDPConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDPConnection.h; sourceTree = "<group>"; };
 		BB30D31316650F7D00ACAE1C /* UDPConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UDPConnection.m; sourceTree = "<group>"; };
 		BB30D319166520FF00ACAE1C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -88,6 +96,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB20D09916BF00010080559A /* AVFoundation.framework in Frameworks */,
+				BB20D09716BEFFCD0080559A /* AudioToolbox.framework in Frameworks */,
+				BB20D09316BEFC320080559A /* libpd-ios.a in Frameworks */,
 				BB30D31A166520FF00ACAE1C /* QuartzCore.framework in Frameworks */,
 				BBA9363E165B0D4C00567BD0 /* CoreLocation.framework in Frameworks */,
 				BBA9363C165B0D4500567BD0 /* CoreMotion.framework in Frameworks */,
@@ -127,6 +138,9 @@
 		BBA935F9165AFAAB00567BD0 = {
 			isa = PBXGroup;
 			children = (
+				BB20D09816BF00010080559A /* AVFoundation.framework */,
+				BB20D09616BEFFCD0080559A /* AudioToolbox.framework */,
+				BB20D09216BEFC320080559A /* libpd-ios.a */,
 				BB30D319166520FF00ACAE1C /* QuartzCore.framework */,
 				BBA9363D165B0D4C00567BD0 /* CoreLocation.framework */,
 				BBA9363B165B0D4500567BD0 /* CoreMotion.framework */,
@@ -202,6 +216,7 @@
 				BBA9361C165AFAAB00567BD0 /* Default@2x.png */,
 				BBA9361E165AFAAB00567BD0 /* Default-568h@2x.png */,
 				BBD1FC431669B29100B785D9 /* img_reload.png */,
+				BB20D09416BEFF500080559A /* test.pd */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -268,6 +283,7 @@
 				BBD1FC441669B29100B785D9 /* img_reload.png in Resources */,
 				BBE33FF916BE02A50006A716 /* MainViewController~ipad.xib in Resources */,
 				BBE33FFC16BE02D00006A716 /* FlipsideViewController~ipad.xib in Resources */,
+				BB20D09516BEFF500080559A /* test.pd in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,8 +415,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DinoLasers/DinoLasers-Prefix.pch";
+				HEADER_SEARCH_PATHS = "../pd-for-ios/libpd/**";
 				INFOPLIST_FILE = "DinoLasers/DinoLasers-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = "../pd-for-ios/libpd/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -414,8 +432,10 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DinoLasers/DinoLasers-Prefix.pch";
+				HEADER_SEARCH_PATHS = "../pd-for-ios/libpd/**";
 				INFOPLIST_FILE = "DinoLasers/DinoLasers-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = "../pd-for-ios/libpd/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;

@@ -50,6 +50,9 @@
 @synthesize timer;
 @synthesize tag;
 @synthesize motionAudioViewController;
+@synthesize toggleLoggingButton;
+@synthesize logTextView;
+@synthesize motionController;
 
 - (void)dealloc {
     [self.udpConnection close];

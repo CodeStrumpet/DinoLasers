@@ -23,6 +23,7 @@
 @synthesize motionAudioEnabledSwitch;
 @synthesize hostIPTextField;
 @synthesize localIPLabel;
+@synthesize delegate;
 
 - (id)initWithDinoLaserSettings:(DinoLaserSettings *)settings {
     if ((self = [super initWithNibName:@"FlipsideViewController" bundle:nil])) {

@@ -16,6 +16,9 @@
 
 @implementation AppDelegate
 
+@synthesize mainViewController;
+@synthesize window;
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

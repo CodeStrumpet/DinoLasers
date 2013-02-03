@@ -16,7 +16,7 @@ public static final int MOTION_EVENT_BUFFER_SIZE = 50;
 float maxAccel, maxRotation = 0;
 
 // Reading from a file
-boolean readLogFile = true;
+boolean readLogFile = false;
 int timerInterval = 50; // in milliseconds
 int timerIntervalStart = 0;
 String[] logMessages;
@@ -33,6 +33,7 @@ void setup() {
   udp = new UDP( this, 10552); 
   udp.log( true );        // <-- printout the connection activity
   if (!readLogFile) {
+      println("about to commence listening on port 10552");
       udp.listen( true );      
   }
   
@@ -83,7 +84,8 @@ void draw() {
     
     // add some info about current vals
     stroke(255);
-    text("low-pass alpha:  " + lowPassAlpha, 40, height - 50);
+    text("low-pass alpha ('<' & '>'):  " + lowPassAlpha, 40, height - 50);
+    text("(lower number means more smoothing)", 40, height - 30);
 }
 
 void drawMotionPlots() {

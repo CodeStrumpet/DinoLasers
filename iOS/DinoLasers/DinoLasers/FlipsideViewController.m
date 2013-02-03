@@ -20,6 +20,7 @@
 @synthesize dinoLaserSettings;
 @synthesize logEnabledSwitch;
 @synthesize udpEnabledSwitch;
+@synthesize motionAudioEnabledSwitch;
 @synthesize hostIPTextField;
 @synthesize localIPLabel;
 
@@ -38,6 +39,8 @@
     
     [self.logEnabledSwitch setOn:self.dinoLaserSettings.persistenceModes & PersistenceModeLogFile ? YES : NO];
     [self.udpEnabledSwitch setOn:self.dinoLaserSettings.persistenceModes & PersistenceModeUDP ? YES : NO];
+    [self.motionAudioEnabledSwitch setOn:self.dinoLaserSettings.persistenceModes & PersistenceModeMotionAudio ? YES : NO];
+    
     self.hostIPTextField.text = self.dinoLaserSettings.hostIP;
     
     [self refreshIPLabel];
@@ -66,6 +69,9 @@
     }
     if (self.logEnabledSwitch.isOn) {
         newMode |= PersistenceModeLogFile;
+    }
+    if (self.motionAudioEnabledSwitch.isOn) {
+        newMode |= PersistenceModeMotionAudio;
     }
     self.dinoLaserSettings.persistenceModes = newMode;
     self.dinoLaserSettings.hostIP = self.hostIPTextField.text;

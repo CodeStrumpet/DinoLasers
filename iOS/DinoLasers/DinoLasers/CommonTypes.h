@@ -16,7 +16,8 @@ typedef enum PersistenceMode {
     PersistenceModeNone = 0,
     PersistenceModeUDP = 0x1,
     PersistenceModeLogFile = 0x2,
-    PersistenceModeGameKit = 0x4
+    PersistenceModeGameKit = 0x4,
+    PersistenceModeMotionAudio = 0x8
 } PersistenceMode;
 
 #endif

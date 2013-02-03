@@ -24,6 +24,7 @@
 
 @property (nonatomic, strong) IBOutlet UISwitch *udpEnabledSwitch;
 @property (nonatomic, strong) IBOutlet UISwitch *logEnabledSwitch;
+@property (nonatomic, strong) IBOutlet UISwitch *motionAudioEnabledSwitch;
 @property (nonatomic, strong) IBOutlet UITextField *hostIPTextField;
 
 - (id)initWithDinoLaserSettings:(DinoLaserSettings *)settings;

@@ -33,6 +33,9 @@
 		BBA9363A165B064C00567BD0 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA93639165B064B00567BD0 /* CFNetwork.framework */; };
 		BBA9363C165B0D4500567BD0 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA9363B165B0D4500567BD0 /* CoreMotion.framework */; };
 		BBA9363E165B0D4C00567BD0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA9363D165B0D4C00567BD0 /* CoreLocation.framework */; };
+		BBBAEFB116BF0F3E001708C8 /* MotionAudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBBAEFAF16BF0F3E001708C8 /* MotionAudioViewController.m */; };
+		BBBAEFB216BF0F3E001708C8 /* MotionAudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBBAEFB016BF0F3E001708C8 /* MotionAudioViewController.xib */; };
+		BBBAEFB616BF0F86001708C8 /* MotionEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = BBBAEFB516BF0F86001708C8 /* MotionEvent.m */; };
 		BBD1FC341667DD9400B785D9 /* dino_laser_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BBD1FC321667DD9400B785D9 /* dino_laser_icon.png */; };
 		BBD1FC351667DD9400B785D9 /* dino_laser_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBD1FC331667DD9400B785D9 /* dino_laser_icon@2x.png */; };
 		BBD1FC3E1669A3EB00B785D9 /* MotionController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD1FC3D1669A3EB00B785D9 /* MotionController.m */; };
@@ -43,7 +46,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BB20D09216BEFC320080559A /* libpd-ios.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = "libpd-ios.a"; path = "../pd-for-ios/libpd/build/Release-iphoneos/libpd-ios.a"; sourceTree = "<group>"; };
+		BB20D09216BEFC320080559A /* libpd-ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libpd-ios.a"; path = "../pd-for-ios/libpd/build/Release-iphoneos/libpd-ios.a"; sourceTree = "<group>"; };
 		BB20D09416BEFF500080559A /* test.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.pd; sourceTree = "<group>"; };
 		BB20D09616BEFFCD0080559A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		BB20D09816BF00010080559A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -80,6 +83,11 @@
 		BBA93639165B064B00567BD0 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		BBA9363B165B0D4500567BD0 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		BBA9363D165B0D4C00567BD0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		BBBAEFAE16BF0F3E001708C8 /* MotionAudioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotionAudioViewController.h; sourceTree = "<group>"; };
+		BBBAEFAF16BF0F3E001708C8 /* MotionAudioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MotionAudioViewController.m; sourceTree = "<group>"; };
+		BBBAEFB016BF0F3E001708C8 /* MotionAudioViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MotionAudioViewController.xib; sourceTree = "<group>"; };
+		BBBAEFB416BF0F86001708C8 /* MotionEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotionEvent.h; sourceTree = "<group>"; };
+		BBBAEFB516BF0F86001708C8 /* MotionEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MotionEvent.m; sourceTree = "<group>"; };
 		BBD1FC321667DD9400B785D9 /* dino_laser_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dino_laser_icon.png; sourceTree = "<group>"; };
 		BBD1FC331667DD9400B785D9 /* dino_laser_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dino_laser_icon@2x.png"; sourceTree = "<group>"; };
 		BBD1FC3C1669A3EB00B785D9 /* MotionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotionController.h; sourceTree = "<group>"; };
@@ -131,6 +139,7 @@
 				BBA93629165AFAAB00567BD0 /* FlipsideViewController.xib */,
 				BBE33FF716BE02A50006A716 /* MainViewController~ipad.xib */,
 				BBE33FFA16BE02D00006A716 /* FlipsideViewController~ipad.xib */,
+				BBBAEFB016BF0F3E001708C8 /* MotionAudioViewController.xib */,
 			);
 			name = "Interface Builder";
 			sourceTree = "<group>";
@@ -179,6 +188,8 @@
 				BBA93621165AFAAB00567BD0 /* MainViewController.m */,
 				BBA93623165AFAAB00567BD0 /* FlipsideViewController.h */,
 				BBA93624165AFAAB00567BD0 /* FlipsideViewController.m */,
+				BBBAEFAE16BF0F3E001708C8 /* MotionAudioViewController.h */,
+				BBBAEFAF16BF0F3E001708C8 /* MotionAudioViewController.m */,
 				BBD1FC3C1669A3EB00B785D9 /* MotionController.h */,
 				BBD1FC3D1669A3EB00B785D9 /* MotionController.m */,
 				BB30D31216650F7D00ACAE1C /* UDPConnection.h */,
@@ -188,6 +199,8 @@
 				BB30D31F1665334200ACAE1C /* CommonTypes.h */,
 				BBD1FC401669A91600B785D9 /* DinoLaserSettings.h */,
 				BBD1FC411669A91600B785D9 /* DinoLaserSettings.m */,
+				BBBAEFB416BF0F86001708C8 /* MotionEvent.h */,
+				BBBAEFB516BF0F86001708C8 /* MotionEvent.m */,
 				BB30D31116650EE500ACAE1C /* Interface Builder */,
 				BB30D30F16650EC400ACAE1C /* 3rd Party */,
 				BBA9360F165AFAAB00567BD0 /* Supporting Files */,
@@ -284,6 +297,7 @@
 				BBE33FF916BE02A50006A716 /* MainViewController~ipad.xib in Resources */,
 				BBE33FFC16BE02D00006A716 /* FlipsideViewController~ipad.xib in Resources */,
 				BB20D09516BEFF500080559A /* test.pd in Resources */,
+				BBBAEFB216BF0F3E001708C8 /* MotionAudioViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +318,8 @@
 				BB30D31E1665278B00ACAE1C /* LogConnection.m in Sources */,
 				BBD1FC3E1669A3EB00B785D9 /* MotionController.m in Sources */,
 				BBD1FC421669A91600B785D9 /* DinoLaserSettings.m in Sources */,
+				BBBAEFB116BF0F3E001708C8 /* MotionAudioViewController.m in Sources */,
+				BBBAEFB616BF0F86001708C8 /* MotionEvent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

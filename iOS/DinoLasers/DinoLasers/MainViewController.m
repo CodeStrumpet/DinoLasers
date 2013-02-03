@@ -14,6 +14,8 @@
 #import "LogConnection.h"
 #import "MotionController.h"
 #import "DinoLaserSettings.h"
+#import "MotionEvent.h"
+#import "MotionAudioViewController.h"
 
 #define LOG_BUFFER_SIZE 300
 
@@ -27,6 +29,7 @@
 @property (nonatomic, strong) NSString *logString;
 @property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic, assign) long tag;
+@property (nonatomic, strong) MotionAudioViewController *motionAudioViewController;
 
 @end
 
@@ -40,6 +43,7 @@
 @synthesize logString;
 @synthesize timer;
 @synthesize tag;
+@synthesize motionAudioViewController;
 
 - (void)dealloc {
     [self.udpConnection close];
@@ -105,6 +109,17 @@
         // kill existing log connection if it exists
         self.logConnection = nil;
     }
+    
+    // setup MotionAudioViewController if enabled
+    if (currPersistenceMode & PersistenceModeMotionAudio) {
+        if (!self.motionAudioViewController) {
+            self.motionAudioViewController = [[MotionAudioViewController alloc] initWithNibName:@"MotionAudioViewController" bundle:nil];
+        }
+    } else {
+        // destroy MotionAudioViewController because it is not wanted
+        [self.motionAudioViewController killAudio];
+        self.motionAudioViewController = nil;
+    }
 }
 
 
@@ -155,6 +170,22 @@
     [alertView show];
 }
 
+- (IBAction)showAudioController:(id)sender {
+
+    PersistenceMode currentMode = [[NSUserDefaults standardUserDefaults] integerForKey:PERSISTENCE_MODES_SETTINGS_KEY];
+    
+    currentMode = currentMode | PersistenceModeMotionAudio;
+    
+    [[NSUserDefaults standardUserDefaults] setInteger:currentMode forKey:PERSISTENCE_MODES_SETTINGS_KEY];
+    
+    [self updatePersistenceConnections];
+    
+    [self presentViewController:self.motionAudioViewController animated:YES completion:^{}];
+}
+
+
+#pragma mark - UIAlertViewDelegate
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 1) {
         [self.logConnection beginNewFile];
@@ -167,26 +198,39 @@
 // Timer callback
 -(void)timerFired:(NSTimer *)theTimer {
     if (isRecording) {
-        [self processMotionData];
+        [self updateMotionData];
     }
 }
 
-- (void)processMotionData {
+- (void)updateMotionData {
     NSString *motionString = [self.motionController currentMotionString];
     
-    NSLog(@"motionString: %@", motionString);
-    [self appendToLog:motionString];
+    [self appendToLog:[NSString stringWithFormat:@"IMU:  %@", motionString]];
+    
+    [self processMotionData:motionString];
+    
+}
+
+- (void)processMotionData:(NSString *)motionString {
+    if (!motionString) {
+        return;
+    }
     
     // pass update to udpConnection if it exists
     [self.udpConnection sendMessage:motionString withTag:tag];
     
     // pass update to logConnection if it exists
     [self.logConnection printLineToLog:motionString];
+   
+    // create motion event and pass it to MotionAudioViewController if it exists
+    if (self.motionAudioViewController) {
+        MotionEvent *motionEvent = [[MotionEvent alloc] initWithMotionString:motionString];
+        [self.motionAudioViewController handleMotionEvent:motionEvent];
+    }
     
     // increment the tag
     self.tag++;
 }
-
 
 #pragma mark - FlipsideViewDelegate
 
@@ -211,7 +255,11 @@
 #pragma mark UDPConnectionDelegate
 
 - (void)UDPConnection:(UDPConnection *)theUDPConnection didReceiveMessage:(NSString *)message fromHost:(NSString *)theHost onPort:(int)thePort {
-    [self appendToLog:[NSString stringWithFormat:@"Incoming:  %@", message]];
+    
+    [self appendToLog:[NSString stringWithFormat:@"UDP:  %@", message]];
+    
+    [self processMotionData:message];
+    
 }
 
 

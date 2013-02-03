@@ -8,8 +8,11 @@
 
 #import "FlipsideViewController.h"
 #import "DinoLaserSettings.h"
+#import "UDPConnection.h"
 
 @interface FlipsideViewController ()
+
+@property (nonatomic, strong) IBOutlet UILabel *localIPLabel;
 
 @end
 
@@ -18,6 +21,7 @@
 @synthesize logEnabledSwitch;
 @synthesize udpEnabledSwitch;
 @synthesize hostIPTextField;
+@synthesize localIPLabel;
 
 - (id)initWithDinoLaserSettings:(DinoLaserSettings *)settings {
     if ((self = [super initWithNibName:@"FlipsideViewController" bundle:nil])) {
@@ -35,6 +39,8 @@
     [self.logEnabledSwitch setOn:self.dinoLaserSettings.persistenceModes & PersistenceModeLogFile ? YES : NO];
     [self.udpEnabledSwitch setOn:self.dinoLaserSettings.persistenceModes & PersistenceModeUDP ? YES : NO];
     self.hostIPTextField.text = self.dinoLaserSettings.hostIP;
+    
+    [self refreshIPLabel];
 }
 
 - (void)didReceiveMemoryWarning
@@ -64,7 +70,13 @@
     self.dinoLaserSettings.persistenceModes = newMode;
     self.dinoLaserSettings.hostIP = self.hostIPTextField.text;
     
+    [self refreshIPLabel];
+    
     [self.delegate flipsideViewController:self didUpdateSettings:self.dinoLaserSettings];
+}
+
+- (void)refreshIPLabel {
+    self.localIPLabel.text = [NSString stringWithFormat:@"Local IP:  %@", [UDPConnection getIPAddress]];
 }
 
 @end

@@ -78,6 +78,7 @@
     if (currPersistenceMode & PersistenceModeUDP) {
         if (!self.udpConnection) {
             self.udpConnection = [[UDPConnection alloc] init];
+            self.udpConnection.delegate = self;
         }
         
         NSString *hostIP = [[NSUserDefaults standardUserDefaults] objectForKey:HOST_IP_KEY];
@@ -203,9 +204,18 @@
     [self updatePersistenceConnections];
 }
 
+
+#pragma mark UDPConnectionDelegate
+
+- (void)UDPConnection:(UDPConnection *)theUDPConnection didReceiveMessage:(NSString *)message fromHost:(NSString *)theHost onPort:(int)thePort {
+    [self appendToLog:[NSString stringWithFormat:@"Incoming:  %@", message]];
+}
+
+
 #pragma mark - Scrolling OnScreen Log 
 
 - (void)appendToLog:(NSString *)suffix {
+    logString = [logString stringByAppendingString:@"\n"];
     logString = [logString stringByAppendingString:suffix];
     if (logString.length >= LOG_BUFFER_SIZE) {
         logString = [logString substringFromIndex:logString.length - LOG_BUFFER_SIZE];

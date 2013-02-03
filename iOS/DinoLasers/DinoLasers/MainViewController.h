@@ -7,8 +7,9 @@
 //
 
 #import "FlipsideViewController.h"
+#import "UDPConnection.h"
 
-@interface MainViewController : UIViewController <FlipsideViewControllerDelegate, UIAlertViewDelegate> {
+@interface MainViewController : UIViewController <FlipsideViewControllerDelegate, UIAlertViewDelegate, UDPConnectionDelegate> {
 
 }
 

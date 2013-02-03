@@ -11,7 +11,7 @@
 #import "GCDAsyncUdpSocket.h"
 
 #define DEFAULT_HOST_PORT 10552
-#define DEFAULT_LOCAL_PORT 0
+#define DEFAULT_LOCAL_PORT 10552
 #define DEFAULT_HOST @"localhost"
 
 @class UDPConnection;
@@ -29,6 +29,8 @@
 @property (nonatomic, assign) int hostPort;
 @property (nonatomic, assign) int localPort;
 @property (nonatomic, assign) id <UDPConnectionDelegate> delegate;
+
++ (NSString *)getIPAddress;
 
 /**
  *  Will instantiate the socket with the current host and port values

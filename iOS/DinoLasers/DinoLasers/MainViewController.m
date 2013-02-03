@@ -31,6 +31,12 @@
 @property (nonatomic, assign) long tag;
 @property (nonatomic, strong) MotionAudioViewController *motionAudioViewController;
 
+- (void)updatePersistenceConnections;
+- (void)updateToggleRecordingButton;
+- (void)updateMotionData;
+- (void)appendToLog:(NSString *)suffix;
+- (void)processMotionData:(NSString *)motionString;
+
 @end
 
 

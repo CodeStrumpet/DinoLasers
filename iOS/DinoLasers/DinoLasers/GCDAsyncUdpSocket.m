@@ -255,6 +255,9 @@ enum GCDAsyncUdpSocketConfig
 
 - (BOOL)performMulticastRequest:(int)requestType forGroup:(NSString *)group onInterface:(NSString *)interface error:(NSError **)errPtr;
 
+- (void)suspendSend4Source;
+- (void)suspendSend6Source;
+
 #if TARGET_OS_IPHONE
 - (BOOL)createReadAndWriteStreams:(NSError **)errPtr;
 - (BOOL)registerForStreamCallbacks:(NSError **)errPtr;

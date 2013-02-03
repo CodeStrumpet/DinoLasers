@@ -13,7 +13,7 @@
 @interface FlipsideViewController ()
 
 @property (nonatomic, strong) IBOutlet UILabel *localIPLabel;
-
+- (void)refreshIPLabel;
 @end
 
 @implementation FlipsideViewController

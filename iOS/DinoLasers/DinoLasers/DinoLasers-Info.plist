@@ -14,7 +14,7 @@
 		<string>dino_laser_icon@2x.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
-	<string>org.dinolasers.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>com.tripadvisor.cityguide.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

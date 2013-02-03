@@ -186,7 +186,8 @@
     
     [self updatePersistenceConnections];
     
-    [self presentViewController:self.motionAudioViewController animated:YES completion:^{}];
+    [self presentModalViewController:self.motionAudioViewController animated:YES];
+    //[self presentViewController:self.motionAudioViewController animated:YES completion:^{}];
 }
 
 

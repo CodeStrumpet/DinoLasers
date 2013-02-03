@@ -10,8 +10,8 @@
 #import <Foundation/Foundation.h>
 #import "GCDAsyncUdpSocket.h"
 
-#define DEFAULT_HOST_PORT 10552
-#define DEFAULT_LOCAL_PORT 10552
+#define DEFAULT_HOST_PORT 10554
+#define DEFAULT_LOCAL_PORT 10554
 #define DEFAULT_HOST @"localhost"
 
 @class UDPConnection;

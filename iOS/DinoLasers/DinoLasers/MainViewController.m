@@ -41,6 +41,9 @@
 @synthesize timer;
 @synthesize tag;
 
+- (void)dealloc {
+    [self.udpConnection close];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

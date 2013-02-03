@@ -43,7 +43,8 @@
 }
 
 - (void)setupSocket {
-
+    [self close];
+    
 	self.udpSocket = [[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:self.queue];
 	
 	NSError *error = nil;

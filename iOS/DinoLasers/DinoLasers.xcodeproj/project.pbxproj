@@ -34,6 +34,8 @@
 		BBD1FC3E1669A3EB00B785D9 /* MotionController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD1FC3D1669A3EB00B785D9 /* MotionController.m */; };
 		BBD1FC421669A91600B785D9 /* DinoLaserSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD1FC411669A91600B785D9 /* DinoLaserSettings.m */; };
 		BBD1FC441669B29100B785D9 /* img_reload.png in Resources */ = {isa = PBXBuildFile; fileRef = BBD1FC431669B29100B785D9 /* img_reload.png */; };
+		BBE33FF916BE02A50006A716 /* MainViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBE33FF716BE02A50006A716 /* MainViewController~ipad.xib */; };
+		BBE33FFC16BE02D00006A716 /* FlipsideViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBE33FFA16BE02D00006A716 /* FlipsideViewController~ipad.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +79,8 @@
 		BBD1FC401669A91600B785D9 /* DinoLaserSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DinoLaserSettings.h; sourceTree = "<group>"; };
 		BBD1FC411669A91600B785D9 /* DinoLaserSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DinoLaserSettings.m; sourceTree = "<group>"; };
 		BBD1FC431669B29100B785D9 /* img_reload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_reload.png; sourceTree = "<group>"; };
+		BBE33FF816BE02A50006A716 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "en.lproj/MainViewController~ipad.xib"; sourceTree = "<group>"; };
+		BBE33FFB16BE02D00006A716 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "en.lproj/FlipsideViewController~ipad.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,8 @@
 			children = (
 				BBA93626165AFAAB00567BD0 /* MainViewController.xib */,
 				BBA93629165AFAAB00567BD0 /* FlipsideViewController.xib */,
+				BBE33FF716BE02A50006A716 /* MainViewController~ipad.xib */,
+				BBE33FFA16BE02D00006A716 /* FlipsideViewController~ipad.xib */,
 			);
 			name = "Interface Builder";
 			sourceTree = "<group>";
@@ -260,6 +266,8 @@
 				BBD1FC341667DD9400B785D9 /* dino_laser_icon.png in Resources */,
 				BBD1FC351667DD9400B785D9 /* dino_laser_icon@2x.png in Resources */,
 				BBD1FC441669B29100B785D9 /* img_reload.png in Resources */,
+				BBE33FF916BE02A50006A716 /* MainViewController~ipad.xib in Resources */,
+				BBE33FFC16BE02D00006A716 /* FlipsideViewController~ipad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +316,22 @@
 				BBA9362A165AFAAB00567BD0 /* en */,
 			);
 			name = FlipsideViewController.xib;
+			sourceTree = "<group>";
+		};
+		BBE33FF716BE02A50006A716 /* MainViewController~ipad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BBE33FF816BE02A50006A716 /* en */,
+			);
+			name = "MainViewController~ipad.xib";
+			sourceTree = "<group>";
+		};
+		BBE33FFA16BE02D00006A716 /* FlipsideViewController~ipad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BBE33FFB16BE02D00006A716 /* en */,
+			);
+			name = "FlipsideViewController~ipad.xib";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -379,6 +403,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -392,6 +417,7 @@
 				INFOPLIST_FILE = "DinoLasers/DinoLasers-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

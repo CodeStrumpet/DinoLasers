@@ -88,7 +88,7 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">Toggle eh</string>
+						<string key="IBUINormalTitle">Play / Pause</string>
 						<object class="NSColor" key="IBUIHighlightedTitleColor" id="693084060">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>

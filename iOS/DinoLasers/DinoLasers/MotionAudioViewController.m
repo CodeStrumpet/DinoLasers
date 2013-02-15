@@ -9,6 +9,7 @@
 #import "MotionAudioViewController.h"
 #import "PdAudioController.h"
 #import "PdBase.h"
+#import "MotionEvent.h"
 
 @interface MotionAudioViewController ()
 @property (nonatomic, strong) PdAudioController *audioController;

@@ -10,14 +10,6 @@
 
 @interface MotionEvent ()
 
-@property (nonatomic, assign) double timestamp;
-@property (nonatomic, assign) double accelX;
-@property (nonatomic, assign) double accelY;
-@property (nonatomic, assign) double accelZ;
-@property (nonatomic, assign) double rotationX;
-@property (nonatomic, assign) double rotationY;
-@property (nonatomic, assign) double rotationZ;
-@property (nonatomic, strong) NSString *markerString;
 
 @end
 

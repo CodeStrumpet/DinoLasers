@@ -49,7 +49,6 @@
     
     [self.motionManager startDeviceMotionUpdatesUsingReferenceFrame:CMAttitudeReferenceFrameXTrueNorthZVertical];
     
-    
     // capture the reference attitude as the initial position
     //[self saveReferenceAttitude];
 

@@ -43,6 +43,8 @@
 
 - (void)handleMotionEvent:(MotionEvent *)motionEvent {
     NSLog(@"Received motion event in audio controller");
+    double  _accelX =  [motionEvent accelX];
+    NSLog(@" --- Motion event - accelX : %f", _accelX);
 }
 
 - (void)killAudio {

@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface MotionEvent : NSObject
-
 - (id)initWithMotionString:(NSString *)motionString;
     
 @end

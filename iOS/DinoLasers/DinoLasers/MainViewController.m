@@ -235,6 +235,7 @@
     // create motion event and pass it to MotionAudioViewController if it exists
     if (self.motionAudioViewController) {
         MotionEvent *motionEvent = [[MotionEvent alloc] initWithMotionString:motionString];
+        
         [self.motionAudioViewController handleMotionEvent:motionEvent];
     }
     

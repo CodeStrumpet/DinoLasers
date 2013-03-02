@@ -15,7 +15,7 @@
 
 }
 
-@property (readwrite, strong, nonatomic) __attribute__((NSObject)) dispatch_queue_t queue;
+@property (readwrite, strong, nonatomic) dispatch_queue_t queue;
 
 @end
 

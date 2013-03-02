@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D60533216E2BE1B00EAC9F5 /* wavetabler.pd in Resources */ = {isa = PBXBuildFile; fileRef = 6D60533116E2BE1B00EAC9F5 /* wavetabler.pd */; };
 		BB20D09316BEFC320080559A /* libpd-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB20D09216BEFC320080559A /* libpd-ios.a */; };
 		BB20D09516BEFF500080559A /* test.pd in Resources */ = {isa = PBXBuildFile; fileRef = BB20D09416BEFF500080559A /* test.pd */; };
 		BB20D09716BEFFCD0080559A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB20D09616BEFFCD0080559A /* AudioToolbox.framework */; };
@@ -46,6 +47,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6D60533116E2BE1B00EAC9F5 /* wavetabler.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wavetabler.pd; sourceTree = "<group>"; };
 		BB20D09216BEFC320080559A /* libpd-ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libpd-ios.a"; path = "../pd-for-ios/libpd/build/Release-iphoneos/libpd-ios.a"; sourceTree = "<group>"; };
 		BB20D09416BEFF500080559A /* test.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.pd; sourceTree = "<group>"; };
 		BB20D09616BEFFCD0080559A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -225,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				BBD1FC321667DD9400B785D9 /* dino_laser_icon.png */,
+				6D60533116E2BE1B00EAC9F5 /* wavetabler.pd */,
 				BBD1FC331667DD9400B785D9 /* dino_laser_icon@2x.png */,
 				BBA9361C165AFAAB00567BD0 /* Default@2x.png */,
 				BBA9361E165AFAAB00567BD0 /* Default-568h@2x.png */,
@@ -298,6 +301,7 @@
 				BBE33FFC16BE02D00006A716 /* FlipsideViewController~ipad.xib in Resources */,
 				BB20D09516BEFF500080559A /* test.pd in Resources */,
 				BBBAEFB216BF0F3E001708C8 /* MotionAudioViewController.xib in Resources */,
+				6D60533216E2BE1B00EAC9F5 /* wavetabler.pd in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,7 +437,7 @@
 				GCC_PREFIX_HEADER = "DinoLasers/DinoLasers-Prefix.pch";
 				HEADER_SEARCH_PATHS = "../pd-for-ios/libpd/**";
 				INFOPLIST_FILE = "DinoLasers/DinoLasers-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = "../pd-for-ios/libpd/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -450,7 +454,7 @@
 				GCC_PREFIX_HEADER = "DinoLasers/DinoLasers-Prefix.pch";
 				HEADER_SEARCH_PATHS = "../pd-for-ios/libpd/**";
 				INFOPLIST_FILE = "DinoLasers/DinoLasers-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = "../pd-for-ios/libpd/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

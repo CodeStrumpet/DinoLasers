@@ -11,6 +11,11 @@
 #import "PdBase.h"
 #import "MotionEvent.h"
 
+
+#define RECEIVER_FREQ @"synth-freq"
+#define RECEIVER_DFREQ @"synth-dfreq"
+#define RECEIVER_MAG @"synth-mag"
+
 @interface MotionAudioViewController ()
 @property (nonatomic, strong) PdAudioController *audioController;
 
@@ -28,7 +33,7 @@
         NSLog(@"Audio is Turned on");
         self.audioController = [[PdAudioController alloc] init];
         [self.audioController configurePlaybackWithSampleRate:44100 numberChannels:2 inputEnabled:YES mixingEnabled:NO];
-        [PdBase openFile:@"test.pd" path:[[NSBundle mainBundle] resourcePath]];
+        [PdBase openFile:@"wavetabler.pd" path:[[NSBundle mainBundle] resourcePath]];
         [self.audioController setActive:YES];
         [self.audioController print];
         
@@ -44,8 +49,24 @@
 
 - (void)handleMotionEvent:(MotionEvent *)motionEvent {
     NSLog(@"Received motion event in audio controller");
-    double  _accelX =  [motionEvent accelX];
-    NSLog(@" --- Motion event - accelX : %f", _accelX);
+    float  accelX =  [motionEvent accelX];
+    float  accelY =  [motionEvent accelY];
+    float  accelZ =  [motionEvent accelZ];
+
+    float accelMagnitude = sqrtf((accelX*accelX + accelY*accelY + accelZ*accelZ));
+    
+    float mag = 0.5f;
+    float freq = 220;
+    float dfreq = accelMagnitude * 100;
+    
+//    NSLog(@"mag : %f", mag);
+//    NSLog(@"freq : %f", freq);
+    NSLog(@"dfreq : %f", dfreq);
+
+    [PdBase sendFloat:mag toReceiver:RECEIVER_MAG];
+    [PdBase sendFloat:freq toReceiver:RECEIVER_FREQ];
+    [PdBase sendFloat:dfreq toReceiver:RECEIVER_DFREQ];
+
 }
 
 - (void)killAudio {
